@@ -211,7 +211,7 @@ export default function AIChat() {
             ...prev,
             {
               user: "ai",
-              message: `Hello! I&#39;m your AI assistant for medicine availability. I can help you with:\n\n🔍 Check medicine availability\n🏥 Find stockists in your region\n📦 Place orders for medicines\n❓ Answer questions about our services\n\nWhat would you like to do?`,
+              message: `Hello! I'm your AI assistant for medicine availability. I can help you with:\n\n🔍 Check medicine availability\n🏥 Find stockists in your region\n📦 Place orders for medicines\n❓ Answer questions about our services\n\nWhat would you like to do?`,
               timestamp: new Date().toISOString(),
               type: "features",
             },
@@ -222,7 +222,7 @@ export default function AIChat() {
             {
               user: "ai",
               message:
-                "Hello! Please say &#39;hi&#39; or &#39;hello&#39; to start our conversation.",
+                "Hello! Please say 'hi' or 'hello' to start our conversation.",
               timestamp: new Date().toISOString(),
             },
           ]);
@@ -241,7 +241,7 @@ export default function AIChat() {
             {
               user: "ai",
               message:
-                "Great! I&#39;ll help you check medicine availability. What&#39;s the name of the medicine you&#39;re looking for?",
+                "Great! I'll help you check medicine availability. What's the name of the medicine you're looking for?",
               timestamp: new Date().toISOString(),
             },
           ]);
@@ -255,7 +255,7 @@ export default function AIChat() {
             {
               user: "ai",
               message:
-                "I&#39;ll help you find stockists. Which region are you looking in? Please select from the dropdown or type the region name.",
+                "I'll help you find stockists. Which region are you looking in? Please select from the dropdown or type the region name.",
               timestamp: new Date().toISOString(),
               type: "region_selection",
             },
@@ -270,7 +270,7 @@ export default function AIChat() {
             {
               user: "ai",
               message:
-                "I&#39;ll help you place an order. What medicine would you like to order?",
+                "I'll help you place an order. What medicine would you like to order?",
               timestamp: new Date().toISOString(),
             },
           ]);
@@ -295,7 +295,7 @@ export default function AIChat() {
           ...prev,
           {
             user: "ai",
-            message: `Got it! You&#39;re looking for "${message}". Now, which region would you like to check? Please select from the dropdown or type the region name.`,
+            message: `Got it! You're looking for "${message}". Now, which region would you like to check? Please select from the dropdown or type the region name.`,
             timestamp: new Date().toISOString(),
             type: "region_selection",
           },
@@ -412,7 +412,7 @@ export default function AIChat() {
           ...prev,
           {
             user: "ai",
-            message: `Sorry, I couldn&#39;t find any matches for "${medicine}" in ${region}. Please try a different medicine or region.`,
+            message: `Sorry, I couldn't find any matches for "${medicine}" in ${region}. Please try a different medicine or region.`,
             timestamp: new Date().toISOString(),
           },
           {
@@ -429,7 +429,7 @@ export default function AIChat() {
         ...prev,
         {
           user: "ai",
-          message: `Sorry, I couldn&#39;t search for medicines right now. Please try again later.`,
+          message: `Sorry, I couldn't search for medicines right now. Please try again later.`,
           timestamp: new Date().toISOString(),
         },
         {
@@ -470,7 +470,7 @@ export default function AIChat() {
           ...prev,
           {
             user: "ai",
-            message: `Sorry, I couldn&#39;t find any stockists in ${region}. Please try a different region.`,
+            message: `Sorry, I couldn't find any stockists in ${region}. Please try a different region.`,
             timestamp: new Date().toISOString(),
           },
           {
@@ -487,7 +487,7 @@ export default function AIChat() {
         ...prev,
         {
           user: "ai",
-          message: `Sorry, I couldn&#39;t get stockist information right now. Please try again later.`,
+          message: `Sorry, I couldn't get stockist information right now. Please try again later.`,
           timestamp: new Date().toISOString(),
         },
         {
@@ -530,7 +530,7 @@ export default function AIChat() {
           ...prev,
           {
             user: "ai",
-            message: `Sorry, I couldn&#39;t find "${medicine}" in ${region}. Please try a different medicine or region.`,
+            message: `Sorry, I couldn't find "${medicine}" in ${region}. Please try a different medicine or region.`,
             timestamp: new Date().toISOString(),
           },
           {
@@ -547,7 +547,7 @@ export default function AIChat() {
         ...prev,
         {
           user: "ai",
-          message: `Sorry, I couldn&#39;t process your order request right now. Please try again later.`,
+          message: `Sorry, I couldn't process your order request right now. Please try again later.`,
           timestamp: new Date().toISOString(),
         },
         {
@@ -625,7 +625,7 @@ export default function AIChat() {
         {
           user: "ai",
           message:
-            '👋 Welcome! I&#39;m your AI assistant for medicine availability.\n\nPlease say "hi" or "hello" to start our conversation!',
+            '👋 Welcome! I\'m your AI assistant for medicine availability.\n\nPlease say "hi" or "hello" to start our conversation!',
           timestamp: new Date().toISOString(),
           type: "welcome",
         },
@@ -696,7 +696,7 @@ export default function AIChat() {
                       {
                         user: "ai",
                         message:
-                          '👋 Welcome! I&#39;m your AI assistant for medicine availability.\n\nPlease say "hi" or "hello" to start our conversation!',
+                          '👋 Welcome! I\'m your AI assistant for medicine availability.\n\nPlease say "hi" or "hello" to start our conversation!',
                         timestamp: new Date().toISOString(),
                         type: "welcome",
                       },
@@ -1019,7 +1019,7 @@ export default function AIChat() {
                 </p>
               </div>
               <p className="text-gray-400 text-sm mb-6">
-                We&#39;ll process your order shortly and send you updates.
+                We'll process your order shortly and send you updates.
               </p>
               <button
                 onClick={() => {
