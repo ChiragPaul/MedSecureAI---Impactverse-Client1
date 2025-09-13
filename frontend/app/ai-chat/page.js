@@ -134,7 +134,7 @@ export default function AIChat() {
         ...prev,
         {
           user: "ai",
-          message: `Sorry, I couldn't search for medicines right now. Error: ${error.message}. Please try again later.`,
+          message: `Sorry, I couldn&#39;t search for medicines right now. Error: ${error.message}. Please try again later.`,
           timestamp: new Date().toISOString(),
         },
       ]);
@@ -241,7 +241,7 @@ export default function AIChat() {
             {
               user: "ai",
               message:
-                "Hello! Please say 'hi' or 'hello' to start our conversation.",
+                "Hello! Please say &#39;hi&#39; or &#39;hello&#39; to start our conversation.",
               timestamp: new Date().toISOString(),
             },
           ]);
