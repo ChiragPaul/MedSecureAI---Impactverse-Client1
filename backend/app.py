@@ -413,7 +413,7 @@ if __name__ == "__main__":
     import uvicorn
     
     # Find available port
-    port = find_available_port()
+    port = int(os.environ.get("PORT", 8000))
     if port is None:
         print("Error: No available ports found in range 8000-8010")
         sys.exit(1)
