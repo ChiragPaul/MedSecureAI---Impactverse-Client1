@@ -1,0 +1,77 @@
+{
+  "Pune": [
+    "Apollo Pune",
+    "Local Chemist C",
+    "PharmEasy Pune"
+  ],
+  "Delhi NCR": [
+    "Apollo Pharmacy",
+    "CityCare Chemists",
+    "PharmEasy Hub Delhi"
+  ],
+  "Chennai": [
+    "Apollo Chennai",
+    "Local Chemist B",
+    "Pharmacy Point"
+  ],
+  "Mumbai": [
+    "Local Chemist A",
+    "MedPlus Mumbai",
+    "Wellness Forever"
+  ],
+  "Central India": [
+    "HealthFirst Central",
+    "Local Chemist C",
+    "Regional Meds Central"
+  ],
+  "South India": [
+    "HealthFirst South",
+    "Local Chemist S",
+    "Regional Meds South"
+  ],
+  "Jaipur": [
+    "CityCare Jaipur",
+    "Jaipur Meds",
+    "Local Chemist F"
+  ],
+  "Bangalore": [
+    "1mg Stores",
+    "Guardian Pharmacy",
+    "MedLife Koramangala"
+  ],
+  "Kolkata": [
+    "Apollo Kolkata",
+    "Dawakhana Kolkata",
+    "Local Chemist D"
+  ],
+  "Hyderabad": [
+    "HealthKart Pharmacy",
+    "MedPlus Hyderabad",
+    "NetMeds Store"
+  ],
+  "Northeast India": [
+    "HealthFirst NE",
+    "Local Chemist NE",
+    "Regional Meds NE"
+  ],
+  "Ahmedabad": [
+    "Apollo Ahmedabad",
+    "Local Chemist E",
+    "MedPlus Ahmedabad"
+  ],
+  "East India": [
+    "HealthFirst East",
+    "Local Chemist E",
+    "Regional Meds East"
+  ],
+  "West India": [
+    "HealthFirst West",
+    "Local Chemist W",
+    "Regional Meds West"
+  ],
+  "North India": [
+    "HealthFirst North",
+    "Local Chemist N",
+    "Regional Meds North"
+  ]
+}

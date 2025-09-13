@@ -1,0 +1,344 @@
+* {
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: #fff !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body, html {
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: #fff !important;
+  line-height: 1.6;
+}
+/* Glow effect for buttons on hover */
+.glow-btn:hover, button.glow-btn:hover {
+  box-shadow: 0 0 16px 4px #00ff88, 0 0 8px 2px #00ff88 inset !important;
+  text-shadow: 0 0 8px #00ff88 !important;
+}
+.dark, .dark * {
+  color: #ededed !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+/* Light mode removed */
+/* Radiant hover effect for navbar feature tabs */
+.navbar-feature-link {
+  border-radius: 0.75rem;
+  transition: box-shadow 0.3s, border 0.3s, color 0.3s, background 0.3s;
+}
+.navbar-feature-link:hover {
+  color: var(--brand);
+  border: 2px solid var(--brand);
+  box-shadow: 0 0 24px 8px var(--brand), 0 0 40px 12px #00ff8844;
+}
+/* Radiant hover effect for About Us statement on login/signup page */
+.radiant-hover:hover {
+  color: var(--brand);
+  border: 2px solid var(--brand);
+  box-shadow: 0 16px 48px #00ff88cc, 0 0 32px #00ff88;
+  background: #001a66cc;
+  transition: box-shadow 0.3s, border 0.3s, color 0.3s, background 0.3s;
+}
+/* Sidebar table grid and interactive hover effect */
+.sidebar-table {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #22c55e33;
+  background: none;
+}
+.sidebar-table-row {
+  transition: box-shadow 0.3s, color 0.3s, background 0.3s;
+  cursor: pointer;
+}
+.sidebar-table-row:hover td {
+  color: var(--brand);
+  background: #001a6644;
+  box-shadow: 0 0 16px 0 #22c55e99;
+}
+/* Tab button hover effect */
+.tab-btn {
+  background: none;
+  color: var(--foreground);
+  border: none;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: box-shadow 0.3s, color 0.3s, transform 0.3s, border 0.3s;
+  cursor: pointer;
+}
+.tab-btn:hover {
+  color: var(--brand);
+  box-shadow: 0 2px 16px var(--brand);
+  border-bottom: 2px solid var(--brand);
+  transform: scale(1.08);
+}
+.about-flash-card-scroll.center {
+  left: 50%;
+  transform: translate(-50%, 120%) scale(1);
+}
+.about-flash-card-scroll.center.visible {
+  opacity: 0.97;
+  pointer-events: auto;
+  transform: translate(-50%, 0) scale(1.05);
+}
+@import "tailwindcss";
+
+/* Theme variables for light and dark mode */
+:root {
+  --background: linear-gradient(to bottom right, #002610 0%, #002610 15%, #0a0a0a 60%, #001a66 100%);
+  --foreground: #ededed;
+  --brand: #22c55e;
+  --transition: background 0.5s, color 0.5s;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif !important;
+  min-height: 100vh;
+  transition: var(--transition);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: linear-gradient(to bottom right, #002610 0%, #002610 15%, #0a0a0a 60%, #001a66 100%);
+    --foreground: #ededed;
+    --brand: #22c55e;
+  }
+}
+
+.dark {
+  --background: linear-gradient(to bottom right, #002610 0%, #002610 15%, #0a0a0a 60%, #001a66 100%);
+  --foreground: #ededed;
+  --brand: #22c55e;
+}
+
+/* Remove unused @theme inline */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: linear-gradient(to right, #002d18, #0a0a0a);
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif !important;
+  min-height: 100vh;
+}
+
+.about-flash-card-scroll {
+  position: fixed;
+  top: 60%;
+  min-width: 260px;
+  max-width: 320px;
+  background: #001a66cc;
+  color: #ededed;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px #001a6699;
+  padding: 1.5rem 1.25rem;
+  opacity: 0;
+  transform: translateX(-120%) scale(1);
+  transition: transform 0.7s cubic-bezier(.4,2,.3,1), opacity 0.7s, box-shadow 0.3s;
+  cursor: pointer;
+  z-index: 100;
+  pointer-events: none;
+}
+.about-flash-card-scroll.right {
+  right: 0;
+  left: auto;
+  transform: translateX(120%) scale(1);
+}
+.about-flash-card-scroll.left {
+  left: 0;
+  right: auto;
+  transform: translateX(-120%) scale(1);
+}
+.about-flash-card-scroll.visible {
+  opacity: 0.97;
+  pointer-events: auto;
+  transform: translateX(0) scale(1.05);
+}
+.about-flash-card-scroll:hover {
+  box-shadow: 0 16px 48px #00ff88cc, 0 0 32px #00ff88;
+  opacity: 1;
+  border: 2px solid #00ff88;
+  transform: scale(1.08);
+  transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+}
+
+/* Modern animations and effects */
+.slide-in {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: slideInUp 700ms cubic-bezier(.2,.8,.2,1) 100ms forwards;
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced glow effects */
+.glow-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-btn:hover {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4), 0 0 40px rgba(34, 197, 94, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Modern scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.3);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.5);
+}
+
+/* Backdrop blur support */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Enhanced button animations */
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Modern input focus effects */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+  border-color: #22c55e;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.about-flash-card {
+  position: relative;
+  min-width: 260px;
+  max-width: 320px;
+  background: #001a66cc;
+  color: #ededed;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px #001a6699;
+  padding: 1.5rem 1.25rem;
+  margin-left: -220px;
+  opacity: 0.95;
+  transform: translateX(-40px) scale(1);
+  transition: transform 0.5s cubic-bezier(.4,2,.3,1), box-shadow 0.3s;
+  cursor: pointer;
+}
+.about-flash-card:hover {
+  transform: translateX(0) scale(1.08);
+  box-shadow: 0 16px 48px #00ff88cc, 0 0 32px #00ff88;
+  opacity: 1;
+  border: 2px solid #00ff88;
+  transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+}
+
+/* Custom radiant green border and hover effect for landing page boxes */
+.radiant-box {
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  /* background removed, now set by feature-blue-bg */
+  box-shadow: 0 0 0 0 #00ff88;
+  transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+}
+.radiant-box:hover {
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 24px 8px #00ff88, 0 0 40px 12px #00ff8844;
+  transform: scale(1.08);
+  transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+}
+
+/* Static radiant border for login/signup box (no moving light) */
+.radiant-animated-border {
+  border: 2px solid #22c55e;
+  background: #000 !important;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 24px 0 #22c55e99;
+  position: relative;
+  transition: box-shadow 0.3s, border 0.3s;
+  z-index: 0;
+  overflow: hidden;
+}
+.radiant-animated-border::before {
+  display: none;
+}
+.radiant-animated-border > * {
+  position: relative;
+  z-index: 3;
+}
+.radiant-animated-border:focus-within,
+.radiant-animated-border:hover {
+  box-shadow: 0 0 48px 8px #22c55e, 0 0 40px 12px #00ff88;
+  border-color: #00ff88;
+}
+
+/* Glowing border effect for input fields in login/signup form */
+.radiant-input {
+  border: 2px solid #fff;
+  background: #000 !important;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 0.75rem;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.radiant-input:focus {
+  border-color: #00ff88;
+  box-shadow: 0 0 16px 0 #22c55e99;
+  outline: none;
+}
+
+/* Radiant pop-up effect for recommended prompts in AI chat bot area */
+.recommended-prompt {
+  transition: box-shadow 0.3s, color 0.3s, background 0.3s, transform 0.3s;
+}
+.recommended-prompt:hover {
+  color: #22c55e;
+  background: #001a66cc;
+  box-shadow: 0 8px 32px #22c55e99, 0 0 24px #00ff88;
+  border: 2px solid #22c55e;
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+/* Custom medicine strip cursor for the website */
+/* Cursor is now controlled by JS in layout.js */
