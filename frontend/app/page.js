@@ -1,8 +1,7 @@
 "use client";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useRouter } from "next/navigation";
 import NavbarLoggedOut from "../components/NavbarLoggedOut";
-import Footer from "../components/Footer";
+import ContactSuggestionForms from "../components/ContactSuggestionForms";
 
 export default function Home() {
   const router = useRouter();
@@ -15,9 +14,16 @@ export default function Home() {
   }, [router]);
 
   return (
-    <div className="min-h-screen bg-night text-white flex flex-col">
+    <div
+      className="min-h-screen bg-night text-white flex flex-col scroll-snap-y-mandatory overflow-y-scroll"
+      style={{ scrollSnapType: "y mandatory", scrollBehavior: "smooth" }}
+    >
       <NavbarLoggedOut />
-      <main className="flex-grow flex items-center justify-center px-6">
+      {/* First viewport section */}
+      <section
+        className="min-h-screen flex flex-col items-center justify-center px-6 scroll-snap-align-start"
+        style={{ scrollSnapAlign: "start" }}
+      >
         <div className="text-center max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-brand to-brand/80 bg-clip-text text-transparent">
             MedSecure AI
@@ -42,8 +48,15 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </main>
-      <Footer />
+      </section>
+
+      {/* Second viewport section with forms */}
+      <ContactSuggestionForms />
+
+      {/* Minimal footer */}
+      <footer className="bg-night text-gray-400 text-center py-4">
+        © {new Date().getFullYear()} MedSecure AI. All rights reserved.
+      </footer>
     </div>
   );
 }
