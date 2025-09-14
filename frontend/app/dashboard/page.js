@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "../../components/Navbar";
-import { useAuth } from "../../context/AuthContext";
 
 export default function Dashboard() {
   const router = useRouter();
@@ -10,7 +9,6 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is logged in
     const userId = localStorage.getItem("userId");
     const userRole = localStorage.getItem("role");
 
@@ -19,7 +17,6 @@ export default function Dashboard() {
       return;
     }
 
-    // Set user data
     setUser({
       id: userId,
       role: userRole,
@@ -47,11 +44,9 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-night text-white">
       <Navbar />
-
       <div className="container mx-auto px-6 py-8">
         <div className="max-w-4xl mx-auto">
-          {/* Welcome Header */}
-          <div className="bg-black/40 backdrop-blur-sm border border-brand/20 rounded-xl p-6 mb-8">
+          <div className="bg-black/40 border border-brand/20 rounded-xl p-6 mb-8">
             <h1 className="text-3xl font-bold text-brand mb-2">
               Welcome to MedSecure AI Dashboard
             </h1>
@@ -74,9 +69,8 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Quick Actions */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-black/40 backdrop-blur-sm border border-brand/20 rounded-xl p-6 hover:border-brand/40 transition">
+            <div className="bg-black/40 border border-brand/20 rounded-xl p-6">
               <h3 className="text-xl font-bold text-brand mb-3">
                 Medicine Search
               </h3>
@@ -91,7 +85,7 @@ export default function Dashboard() {
               </button>
             </div>
 
-            <div className="bg-black/40 backdrop-blur-sm border border-brand/20 rounded-xl p-6 hover:border-brand/40 transition">
+            <div className="bg-black/40 border border-brand/20 rounded-xl p-6">
               <h3 className="text-xl font-bold text-brand mb-3">
                 AI Chat Assistant
               </h3>
@@ -106,7 +100,7 @@ export default function Dashboard() {
               </button>
             </div>
 
-            <div className="bg-black/40 backdrop-blur-sm border border-brand/20 rounded-xl p-6 hover:border-brand/40 transition">
+            <div className="bg-black/40 border border-brand/20 rounded-xl p-6">
               <h3 className="text-xl font-bold text-brand mb-3">
                 Stockist Directory
               </h3>
@@ -122,8 +116,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* User Info */}
-          <div className="bg-black/40 backdrop-blur-sm border border-brand/20 rounded-xl p-6 mt-8">
+          <div className="bg-black/40 border border-brand/20 rounded-xl p-6 mt-8">
             <h3 className="text-xl font-bold text-brand mb-4">
               Account Information
             </h3>
