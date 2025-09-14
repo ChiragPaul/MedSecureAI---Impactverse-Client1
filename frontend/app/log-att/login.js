@@ -20,14 +20,21 @@ export default function LoginPage() {
         "https://medsecureai-impactverse-1.onrender.com/api/auth/login",
         { email, password, role }
       );
+
       // Store token
       localStorage.setItem("token", res.data.token);
-      // Update auth context and localStorage
+
+      // Update context + storage
       login(res.data.user._id, res.data.user.role, res.data.user.name);
-      // Redirect to dashboard
-      router.push("/dashboard");
+
+      // Redirect based on role
+      if (res.data.user.role === "supplier") {
+        router.push("/supplier-dashboard");
+      } else {
+        router.push("/dashboard");
+      }
     } catch (err) {
-      alert("❌ " + (err.response?.data?.message || "Error"));
+      alert("❌ " + (err.response?.data?.message || "Login error"));
     }
   };
 
@@ -68,10 +75,13 @@ export default function LoginPage() {
         </button>
       </form>
 
-      {/* Sign up link */}
+      {/* Signup Link */}
       <div className="mt-4 text-center">
-        <span className="text-sm mr-2">Don't have an account?</span>
-        <Link href="/signup" className="text-sm font-medium text-blue-600 hover:underline">
+        <span className="text-sm mr-2">Don’t have an account?</span>
+        <Link
+          href="/signup"
+          className="text-sm font-medium text-blue-600 hover:underline"
+        >
           Create account
         </Link>
       </div>
