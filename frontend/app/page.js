@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import NavbarLoggedOut from "../components/NavbarLoggedOut";
 import ContactSuggestionForms from "../components/ContactSuggestionForms";
 

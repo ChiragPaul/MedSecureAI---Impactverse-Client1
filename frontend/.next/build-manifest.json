@@ -1,41 +1,32 @@
 {
   "pages": {
     "/_app": [
-      "static/chunks/node_modules_next_dist_compiled_next-devtools_index_5277ebc8.js",
-      "static/chunks/node_modules_next_dist_compiled_166120c5._.js",
-      "static/chunks/node_modules_next_dist_shared_lib_2c2ec201._.js",
-      "static/chunks/node_modules_next_dist_client_d0aa886c._.js",
-      "static/chunks/node_modules_next_dist_5b402162._.js",
-      "static/chunks/node_modules_next_app_72f3d36f.js",
-      "static/chunks/[next]_entry_page-loader_ts_742e4b53._.js",
-      "static/chunks/node_modules_react-dom_4411d9bd._.js",
-      "static/chunks/node_modules_db4bb196._.js",
-      "static/chunks/[root-of-the-server]__c54949cc._.js",
-      "static/chunks/Desktop_MedSecureAI---Impactverse-Client1_frontend_pages__app_2da965e7._.js",
-      "static/chunks/turbopack-Desktop_MedSecureAI---Impactverse-Client1_frontend_pages__app_af532db8._.js"
+      "static/chunks/806dcb8ef409a6cc.js",
+      "static/chunks/ef88ccca29dce183.js",
+      "static/chunks/turbopack-03c8922eb832fab7.js"
     ],
     "/_error": [
-      "static/chunks/node_modules_next_dist_compiled_next-devtools_index_5277ebc8.js",
-      "static/chunks/node_modules_next_dist_compiled_166120c5._.js",
-      "static/chunks/node_modules_next_dist_shared_lib_b4122b32._.js",
-      "static/chunks/node_modules_next_dist_client_d0aa886c._.js",
-      "static/chunks/node_modules_next_dist_0cccb603._.js",
-      "static/chunks/node_modules_next_error_1cfbb379.js",
-      "static/chunks/[next]_entry_page-loader_ts_43b523b5._.js",
-      "static/chunks/node_modules_react-dom_4411d9bd._.js",
-      "static/chunks/node_modules_db4bb196._.js",
-      "static/chunks/[root-of-the-server]__0adad4e7._.js",
-      "static/chunks/Desktop_MedSecureAI---Impactverse-Client1_frontend_pages__error_2da965e7._.js",
-      "static/chunks/88e7d_MedSecureAI---Impactverse-Client1_frontend_pages__error_70dc813f._.js"
+      "static/chunks/3573e1fedec88cce.js",
+      "static/chunks/ef88ccca29dce183.js",
+      "static/chunks/turbopack-2c9bef4146de017d.js"
     ]
   },
   "devFiles": [],
   "ampDevFiles": [],
-  "polyfillFiles": [],
-  "lowPriorityFiles": [
-    "static/development/_ssgManifest.js",
-    "static/development/_buildManifest.js"
+  "polyfillFiles": [
+    "static/chunks/a6dad97d9634a72d.js"
   ],
-  "rootMainFiles": [],
+  "lowPriorityFiles": [
+    "static/ZmUnvLCKD4lme-zNG6Ei4/_ssgManifest.js",
+    "static/ZmUnvLCKD4lme-zNG6Ei4/_buildManifest.js"
+  ],
+  "rootMainFiles": [
+    "static/chunks/b118033cb26ea3ac.js",
+    "static/chunks/d9f9cea68d898c42.js",
+    "static/chunks/ee425e4395d62da8.js",
+    "static/chunks/204351a130c23857.js",
+    "static/chunks/e9902f6922eb8a62.js",
+    "static/chunks/turbopack-7ea9ff57a9213055.js"
+  ],
   "ampFirstPages": []
 }

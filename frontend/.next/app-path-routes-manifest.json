@@ -1,0 +1,17 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/about-us/page": "/about-us",
+  "/ai-chat/page": "/ai-chat",
+  "/dashboard/page": "/dashboard",
+  "/favicon.ico/route": "/favicon.ico",
+  "/feature-one/page": "/feature-one",
+  "/feature-three/page": "/feature-three",
+  "/feature-two/page": "/feature-two",
+  "/log-att/login/page": "/log-att/login",
+  "/log-att/logout/page": "/log-att/logout",
+  "/log-att/signup/page": "/log-att/signup",
+  "/login/page": "/login",
+  "/meddata/page": "/meddata",
+  "/page": "/",
+  "/stockists/page": "/stockists"
+}
