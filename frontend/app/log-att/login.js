@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("chemist");
+  const router = useRouter();
+  const { login } = useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -15,8 +19,12 @@ export default function LoginPage() {
         "https://medsecureai-impactverse-1.onrender.com/api/auth/login",
         { email, password, role }
       );
+      // Store token
       localStorage.setItem("token", res.data.token);
-      alert("✅ Login successful");
+      // Update auth context and localStorage
+      login(res.data.user._id, res.data.user.role, res.data.user.name);
+      // Redirect to dashboard
+      router.push("/dashboard");
     } catch (err) {
       alert("❌ " + (err.response?.data?.message || "Error"));
     }
