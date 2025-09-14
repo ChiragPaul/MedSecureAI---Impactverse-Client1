@@ -1,156 +1,63 @@
 "use client";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { useAuth } from "../../context/AuthContext";
 
-export default function Login() {
+import { useState } from "react";
+import axios from "axios";
+
+export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("chemist"); // dropdown
-  const [loading, setLoading] = useState(false);
-  const r = useRouter();
-  const { login } = useAuth();
+  const [role, setRole] = useState("chemist");
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, role }),
-      });
-      const data = await res.json();
-      setLoading(false);
-
-      if (data.success) {
-        // Use auth context login
-        login(data.user._id, data.user.role, data.user.name || data.user.email);
-        r.push("/"); // redirect to main home page
-      } else {
-        alert(data.message);
-      }
+      const res = await axios.post(
+        "https://medsecureai-impactverse-1.onrender.com/api/auth/login",
+        { email, password, role }
+      );
+      localStorage.setItem("token", res.data.token);
+      alert("✅ Login successful");
     } catch (err) {
-      console.error(err);
-      setLoading(false);
-      alert("Login failed");
+      alert("❌ " + (err.response?.data?.message || "Error"));
     }
   };
 
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-start"
-      style={{
-        fontFamily: "Arial, Helvetica, sans-serif",
-        background: "var(--background)",
-        color: "var(--foreground)",
-        transition: "background 0.5s, color 0.5s",
-        minHeight: "140vh",
-      }}
-    >
-      <div
-        className="w-full max-w-md radiant-animated-border mt-24"
-        style={{
-          fontFamily: "Arial, Helvetica, sans-serif",
-          background: "#000",
-          borderRadius: "1.25rem",
-          boxShadow: "0 8px 32px #001a6699",
-        }}
-      >
-        <h2 className="text-2xl font-bold text-brand mb-6 text-center">
-          Login
-        </h2>
-        <form onSubmit={handleLogin} className="flex flex-col gap-4">
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="radiant-input px-4 py-2"
-            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="radiant-input px-4 py-2"
-            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-            required
-          />
-          <select
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-            className="radiant-input px-4 py-2"
-            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-          >
-            <option value="chemist">Chemist</option>
-            <option value="supplier">Supplier</option>
-          </select>
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-brand text-white font-bold py-2 rounded-lg hover:bg-green-600 transition glow-btn"
-            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-          >
-            {loading ? "Logging in..." : "Login"}
-          </button>
-        </form>
-        <div className="mt-6 text-center">
-          <span className="text-gray-400">
-            New user?{" "}
-            <a
-              href="/log-att/signup"
-              className="text-brand underline"
-              style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-            >
-              Sign Up
-            </a>
-          </span>
-        </div>
-      </div>
-      {/* About Us statement with description and radiant hover effect */}
-      <div className="w-full flex flex-col items-center justify-center mt-32 mb-8">
-        <div
-          className="about-us-statement radiant-hover px-8 py-6 rounded-2xl text-center"
-          style={{
-            maxWidth: "600px",
-            fontFamily: "Arial, Helvetica, sans-serif",
-            background: "none",
-            color: "var(--foreground)",
-            boxShadow: "none",
-            cursor: "pointer",
-            border: "2px solid transparent",
-            transition: "box-shadow 0.3s, border 0.3s, color 0.3s",
-          }}
+    <div className="p-6 max-w-md mx-auto">
+      <h1 className="text-xl font-bold mb-4">Login</h1>
+      <form onSubmit={handleLogin} className="flex flex-col gap-3">
+        <input
+          type="email"
+          placeholder="Email"
+          className="border p-2"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="border p-2"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <select
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+          className="border p-2"
         >
-          <h3
-            className="text-2xl font-bold mb-2 underline text-brand"
-            style={{
-              transition: "color 0.3s",
-              fontFamily: "Arial, Helvetica, sans-serif",
-            }}
-          >
-            About Us
-          </h3>
-          <p
-            className="text-lg text-gray-200"
-            style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-          >
-            MedSecure AI is dedicated to building innovative, secure, and
-            user-friendly healthcare solutions. Our mission is to empower users
-            with technology, ensuring privacy, reliability, and a seamless
-            experience. Hover to see our radiant vision!
-          </p>
-        </div>
-      </div>
-      <footer
-        className="mt-12 text-center text-gray-400"
-        style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-      >
-        © {new Date().getFullYear()} YourBrand. All rights reserved.
-      </footer>
+          <option value="chemist">Chemist</option>
+          <option value="supplier">Supplier</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button
+          type="submit"
+          className="bg-green-600 text-white px-4 py-2 rounded"
+        >
+          Login
+        </button>
+      </form>
     </div>
   );
 }
