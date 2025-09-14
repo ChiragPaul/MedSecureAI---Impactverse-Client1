@@ -105,7 +105,7 @@ export default function MedDataPage() {
                 </tr>
               </thead>
               <tbody>
-                {sampleRows(activeTab).map((row, idx) => (
+                {sampleRows().map((row, idx) => (
                   <tr
                     key={idx}
                     className="border-b border-brand/10 hover:bg-black/40 transition-colors duration-200"
@@ -130,8 +130,8 @@ export default function MedDataPage() {
   );
 }
 
-function sampleRows(activeTab) {
-  const all = [
+function sampleRows() {
+  return [
     {
       id: "MED-001",
       name: "Paracetamol 500mg",
@@ -208,5 +208,4 @@ function sampleRows(activeTab) {
       desc: "Supplement used in anemia and pregnancy.",
     },
   ];
-  return activeTab % 2 === 0 ? all : [...all].reverse();
 }
