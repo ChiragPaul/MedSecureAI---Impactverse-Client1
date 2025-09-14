@@ -1,17 +1,7 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/about-us/page": "app/about-us/page.js",
-  "/ai-chat/page": "app/ai-chat/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/feature-one/page": "app/feature-one/page.js",
-  "/feature-three/page": "app/feature-three/page.js",
-  "/feature-two/page": "app/feature-two/page.js",
   "/log-att/login/page": "app/log-att/login/page.js",
-  "/log-att/logout/page": "app/log-att/logout/page.js",
-  "/log-att/signup/page": "app/log-att/signup/page.js",
-  "/login/page": "app/login/page.js",
-  "/meddata/page": "app/meddata/page.js",
   "/page": "app/page.js",
-  "/stockists/page": "app/stockists/page.js"
+  "/supplier-dashboard/page": "app/supplier-dashboard/page.js"
 }

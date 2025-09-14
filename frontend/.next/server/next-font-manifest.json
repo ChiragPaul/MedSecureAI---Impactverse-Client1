@@ -1,58 +1,18 @@
 {
   "app": {
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/_not-found/page": [
+    "[project]/app/_not-found/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/about-us/page": [
+    "[project]/app/log-att/login/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/ai-chat/page": [
+    "[project]/app/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/dashboard/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/feature-one/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/feature-three/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/feature-two/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/log-att/login/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/log-att/logout/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/log-att/signup/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/login/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/meddata/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/page": [
-      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
-      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
-    ],
-    "[project]/Desktop/MedSecureAI---Impactverse-Client1/frontend/app/stockists/page": [
+    "[project]/app/supplier-dashboard/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ]
