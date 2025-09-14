@@ -1,4 +1,4 @@
-"use client";
+y"use client";
 import { useState, useEffect, useRef } from "react";
 import Navbar from "../../components/Navbar";
 
@@ -108,20 +108,19 @@ export default function AIChat() {
       const data = await response.json();
       setMedicineMatches(data.matches);
       return data;
-    } catch (error) {
-      console.error("Error searching medicine:", error);
-      // Show error message to user
-      setChatHistory((prev) => [
-        ...prev,
-        {
-          user: "ai",
-          message: `Sorry, I couldn t search for medicines right now. Error: ${error.message}. Please try again later.`,
-          timestamp: new Date().toISOString(),
-        },
-      ]);
-      return null;
-    }
   };
+    console.error("Error searching medicine:", error);
+    // Show error message to user
+    setChatHistory((prev) => [
+      ...prev,
+      {
+        user: "ai",
+        message: `Sorry, I couldn t search for medicines right now. Error: ${error.message}. Please try again later.`,
+        timestamp: new Date().toISOString(),
+      },
+    ]);
+    return null;
+  }
 
   const predictAvailability = async (
     medicineName,
