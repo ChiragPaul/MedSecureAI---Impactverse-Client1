@@ -1,122 +1,96 @@
 "use client";
+
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import axios from "axios";
 
-export default function Signup() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [region, setRegion] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [role, setRole] = useState("chemist");
-  const router = useRouter();
+export default function SignupPage() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    phone: "",
+    region: "",
+    role: "user",
+  });
 
-  const handleSignup = async (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
-    }
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-    const res = await fetch(
-      "https://medsecureai-impactverse-1.onrender.com/api/auth/signup",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password, phone, region, role }),
-      }
-    );
-
-    const data = await res.json();
-    if (data.success) {
-      alert("Signup successful! Please login.");
-      router.push("/log-att/login");
-    } else {
-      alert(data.message);
+  const handleSignup = async () => {
+    try {
+      const res = await axios.post(
+        process.env.NEXT_PUBLIC_API_URL + "/api/auth/signup",
+        form
+      );
+      alert("✅ " + res.data.message);
+    } catch (err) {
+      alert("❌ " + err.response?.data?.message || "Error");
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start bg-night">
-      <div className="w-full max-w-md radiant-animated-border mt-24 bg-black rounded-xl shadow-lg p-6">
-        <h2 className="text-2xl font-bold text-brand mb-6 text-center">
-          Sign Up
-        </h2>
-        <form onSubmit={handleSignup} className="flex flex-col gap-4">
-          <input
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="radiant-input px-4 py-2"
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="radiant-input px-4 py-2"
-            required
-          />
-          <input
-            type="tel"
-            placeholder="Phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="radiant-input px-4 py-2"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Region"
-            value={region}
-            onChange={(e) => setRegion(e.target.value)}
-            className="radiant-input px-4 py-2"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="radiant-input px-4 py-2"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            className="radiant-input px-4 py-2"
-            required
-          />
-          <select
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-            className="radiant-input px-4 py-2"
-          >
-            <option value="chemist">Chemist</option>
-            <option value="supplier">Supplier</option>
-          </select>
-          <button
-            type="submit"
-            className="bg-brand text-white font-bold py-2 rounded-lg hover:bg-green-600 transition glow-btn"
-          >
-            Sign Up
-          </button>
-        </form>
+    <div className="p-6 max-w-md mx-auto">
+      <h1 className="text-xl font-bold mb-4">Signup</h1>
 
-        <div className="mt-6 text-center">
-          <span className="text-gray-400">
-            Already have an account?{" "}
-            <a href="/log-att/login" className="text-brand underline">
-              Login
-            </a>
-          </span>
-        </div>
-      </div>
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        className="border p-2 w-full mb-2"
+        value={form.name}
+        onChange={handleChange}
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        className="border p-2 w-full mb-2"
+        value={form.email}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        className="border p-2 w-full mb-2"
+        value={form.password}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="phone"
+        placeholder="Phone"
+        className="border p-2 w-full mb-2"
+        value={form.phone}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="region"
+        placeholder="Region"
+        className="border p-2 w-full mb-2"
+        value={form.region}
+        onChange={handleChange}
+      />
+
+      <select
+        name="role"
+        value={form.role}
+        onChange={handleChange}
+        className="border p-2 w-full mb-2"
+      >
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+        <option value="moderator">Moderator</option>
+      </select>
+
+      <button
+        onClick={handleSignup}
+        className="bg-blue-500 text-white px-4 py-2 rounded"
+      >
+        Signup
+      </button>
     </div>
   );
 }
