@@ -1,9 +1,43 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 
 export default function MedDataPage() {
-  const [activeTab] = useState(0);
+  const [records, setRecords] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(
+          "https://csv-to-mongo-convrter.onrender.com/data"
+        );
+        const json = await res.json();
+        setRecords(json.records || []);
+        setFiltered(json.records || []);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  // Filter records whenever query changes
+  useEffect(() => {
+    if (!query.trim()) {
+      setFiltered(records);
+      return;
+    }
+    const q = query.toLowerCase();
+    const results = records.filter((row) =>
+      Object.values(row).some((val) => String(val).toLowerCase().includes(q))
+    );
+    setFiltered(results);
+  }, [query, records]);
 
   return (
     <div
@@ -44,9 +78,7 @@ export default function MedDataPage() {
         </div>
       </section>
 
-      {/* Subnav removed for a cleaner look */}
-
-      {/* Big table area */}
+      {/* Table */}
       <main className="flex-grow px-6 md:px-12 py-8">
         <div className="bg-black/60 backdrop-blur-sm border border-brand/30 rounded-2xl shadow-2xl shadow-brand/10 overflow-hidden">
           <div className="p-6 border-b border-brand/20">
