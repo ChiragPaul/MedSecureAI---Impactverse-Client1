@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function AboutUsPage() {
   return (
     <div className="bg-night text-white">
@@ -17,11 +19,14 @@ export default function AboutUsPage() {
             AI-driven medicine management, ensuring no one is left without
             essential medicines.
           </p>
-          <img
-            src="/image2.png"
-            alt="Vision illustration"
-            className="mx-auto rounded-2xl shadow-2xl shadow-brand/20 max-w-full max-h-96 object-cover"
-          />
+          <div className="relative mx-auto max-w-full h-96">
+            <Image
+              fill
+              src="/image2.png"
+              alt="Vision illustration"
+              className="object-cover rounded-2xl shadow-2xl shadow-brand/20"
+            />
+          </div>
         </div>
       </section>
 
@@ -39,11 +44,14 @@ export default function AboutUsPage() {
             transparently, enabling timely procurement and distribution of
             medicines.
           </p>
-          <img
-            src="/WhatsApp Image 2025-09-12 at 11.36.06_e33f5593.jpg"
-            alt="How we work illustration"
-            className="mx-auto rounded-2xl shadow-2xl shadow-brand/20 max-w-full max-h-96 object-cover"
-          />
+          <div className="relative mx-auto max-w-full h-96">
+            <Image
+              fill
+              src="/WhatsApp Image 2025-09-12 at 11.36.06_e33f5593.jpg"
+              alt="How we work illustration"
+              className="object-cover rounded-2xl shadow-2xl shadow-brand/20"
+            />
+          </div>
         </div>
       </section>
 
@@ -60,11 +68,14 @@ export default function AboutUsPage() {
             We have empowered over 500 health centers with a 95% accuracy rate
             in forecasting, improving medicine availability in rural areas.
           </p>
-          <img
-            src="/WhatsApp Image 2025-09-12 at 11.44.24_36f058b8.jpg"
-            alt="Impact and reach illustration"
-            className="mx-auto rounded-2xl shadow-2xl shadow-brand/20 max-w-full max-h-96 object-cover"
-          />
+          <div className="relative mx-auto max-w-full h-96">
+            <Image
+              fill
+              src="/WhatsApp Image 2025-09-12 at 11.44.24_36f058b8.jpg"
+              alt="Impact and reach illustration"
+              className="object-cover rounded-2xl shadow-2xl shadow-brand/20"
+            />
+          </div>
         </div>
       </section>
     </div>
