@@ -115,7 +115,7 @@ export default function AIChat() {
         ...prev,
         {
           user: "ai",
-          message: `Sorry, I couldn't search for medicines right now. Error: ${error.message}. Please try again later.`,
+          message: `Sorry, I couldn t search for medicines right now. Error: ${error.message}. Please try again later.`,
           timestamp: new Date().toISOString(),
         },
       ]);
@@ -412,7 +412,7 @@ export default function AIChat() {
           ...prev,
           {
             user: "ai",
-            message: `Sorry, I couldn't find any matches for "${medicine}" in ${region}. Please try a different medicine or region.`,
+            message: `Sorry, I couldn t find any matches for "${medicine}" in ${region}. Please try a different medicine or region.`,
             timestamp: new Date().toISOString(),
           },
           {
@@ -547,7 +547,7 @@ export default function AIChat() {
         ...prev,
         {
           user: "ai",
-          message: `Sorry, I couldn't process your order request right now. Please try again later.`,
+          message: `Sorry, I couldn t process your order request right now. Please try again later.`,
           timestamp: new Date().toISOString(),
         },
         {
@@ -696,7 +696,7 @@ export default function AIChat() {
                       {
                         user: "ai",
                         message:
-                          '👋 Welcome! I\'m your AI assistant for medicine availability.\n\nPlease say "hi" or "hello" to start our conversation!',
+                          '👋 Welcome! I m your AI assistant for medicine availability.\n\nPlease say "hi" or "hello" to start our conversation!',
                         timestamp: new Date().toISOString(),
                         type: "welcome",
                       },
