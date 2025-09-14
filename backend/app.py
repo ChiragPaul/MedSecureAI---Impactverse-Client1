@@ -8,6 +8,28 @@ import json
 from datetime import datetime
 import uuid
 
+# Auth models
+class User(BaseModel):
+    _id: str
+    name: str
+    email: str
+    phone: str
+    region: str
+    role: str
+
+class LoginRequest(BaseModel):
+    email: str
+    password: str
+    role: str
+
+class SignupRequest(BaseModel):
+    name: str
+    email: str
+    password: str
+    phone: str
+    region: str
+    role: str
+
 # Add the attempt directory to Python path
 attempt_dir = os.path.join(os.path.dirname(__file__), 'attempt')
 sys.path.append(attempt_dir)
@@ -99,6 +121,7 @@ predictor = None
 medicine_index = None
 stockist_data = {}  # Region-based stockist data
 chat_history = {}  # In production, use a proper database
+users = []  # In-memory user storage
 
 # Predefined Q&A responses
 PREDEFINED_RESPONSES = {
@@ -151,6 +174,31 @@ def initialize_models():
 # Initialize models and data on startup
 load_stockist_data()
 initialize_models()
+
+# Auth endpoints
+@app.post("/api/auth/signup")
+async def signup(request: SignupRequest):
+    # Check if email exists
+    if any(u['email'] == request.email for u in users):
+        raise HTTPException(status_code=400, detail="Email already exists")
+    user = {
+        "_id": str(uuid.uuid4()),
+        "name": request.name,
+        "email": request.email,
+        "password": request.password,  # In production, hash this
+        "phone": request.phone,
+        "region": request.region,
+        "role": request.role
+    }
+    users.append(user)
+    return {"success": True, "message": "Signup successful", "user": {k: v for k, v in user.items() if k != 'password'}}
+
+@app.post("/api/auth/login")
+async def login(request: LoginRequest):
+    user = next((u for u in users if u['email'] == request.email and u['password'] == request.password and u['role'] == request.role), None)
+    if not user:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    return {"success": True, "message": "Login successful", "user": {k: v for k, v in user.items() if k != 'password'}}
 
 @app.get("/")
 async def root():
@@ -413,7 +461,7 @@ if __name__ == "__main__":
     import uvicorn
     
     # Find available port
-    port = int(os.environ.get("PORT", 8000))
+    port = int(os.environ.get("PORT", 5000))
     if port is None:
         print("Error: No available ports found in range 8000-8010")
         sys.exit(1)

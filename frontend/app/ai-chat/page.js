@@ -1019,7 +1019,7 @@ export default function AIChat() {
                 </p>
               </div>
               <p className="text-gray-400 text-sm mb-6">
-                We will process your order shortly and send you updates.
+                We'll process your order shortly and send you updates.
               </p>
               <button
                 onClick={() => {

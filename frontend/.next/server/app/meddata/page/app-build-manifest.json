@@ -1,0 +1,23 @@
+{
+  "pages": {
+    "/meddata/page": [
+      "static/chunks/85a19_next_dist_73beaf82._.js",
+      "static/chunks/Desktop_MedSecureAI---Impactverse-Client1_frontend_app_favicon_ico_mjs_280e7ccc._.js",
+      "static/chunks/[root-of-the-server]__518d47d5._.js",
+      "static/chunks/[root-of-the-server]__988f8f35._.css",
+      "static/chunks/Desktop_MedSecureAI---Impactverse-Client1_frontend_app_layout_a3f563a8.js",
+      "static/chunks/85a19_next_dist_client_components_builtin_global-error_f029821a.js",
+      "static/chunks/Desktop_MedSecureAI---Impactverse-Client1_frontend_5b4f79d1._.js",
+      "static/chunks/Desktop_MedSecureAI---Impactverse-Client1_frontend_app_meddata_page_f029821a.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_a0fb05bb._.js",
+      "static/chunks/85a19_next_dist_compiled_react-dom_15a96432._.js",
+      "static/chunks/85a19_next_dist_compiled_next-devtools_index_9eb8fbae.js",
+      "static/chunks/85a19_next_dist_compiled_5145c29c._.js",
+      "static/chunks/85a19_next_dist_client_b10f16e6._.js",
+      "static/chunks/85a19_next_dist_6e522c74._.js",
+      "static/chunks/85a19_@swc_helpers_cjs_458e0215._.js",
+      "static/chunks/Desktop_MedSecureAI---Impactverse-Client1_frontend_a0ff3932._.js",
+      "static/chunks/turbopack-Desktop_MedSecureAI---Impactverse-Client1_frontend_082fb899._.js"
+    ]
+  }
+}

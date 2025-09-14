@@ -1,0 +1,21 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [
+    "static/chunks/dc054_next_dist_build_polyfills_polyfill-nomodule.js"
+  ],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_27f406a7._.js",
+    "static/chunks/dc054_next_dist_compiled_react-dom_a862a7de._.js",
+    "static/chunks/dc054_next_dist_compiled_next-devtools_index_3eacfe5c.js",
+    "static/chunks/dc054_next_dist_compiled_7e2315f1._.js",
+    "static/chunks/dc054_next_dist_client_2882b4c0._.js",
+    "static/chunks/dc054_next_dist_b913cb84._.js",
+    "static/chunks/dc054_@swc_helpers_cjs_b1cbb783._.js",
+    "static/chunks/Desktop_MedSecureAI---Impactverse-Client1_frontend_a0ff3932._.js",
+    "static/chunks/turbopack-Desktop_MedSecureAI---Impactverse-Client1_frontend_60b140aa._.js"
+  ],
+  "pages": {},
+  "ampFirstPages": []
+}
